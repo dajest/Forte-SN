@@ -1,0 +1,189 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #eff2f6;
+  font-family: 'Roboto', sans-serif;
+}
+
+.app-wrapper {
+  display: flex;
+}
+
+.container {
+  // max-width: 1024px;
+  // margin: 0 auto;
+  flex: 1;
+  padding: 10px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-headding {
+  background: #6c6e6b3f;
+  color: #2d3a44;
+  padding: 10px 5px 10px 10px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3 {
+    margin: 0;
+  }
+
+  .pagination {
+    margin: 0;
+
+    .var-pagination {
+      font-size: 10px;
+    }
+
+    .var-pagination__item { 
+      min-width: 25px !important;
+      height: 25px !important;
+      margin: 4px !important;
+
+      .var-icon {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.list-of-people {
+  // padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(2, 49%);
+  grid-gap: 15px;
+  flex: 1;
+}
+
+.person-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+
+  h3 {
+    margin: 5px 0 1px 0;
+  }
+
+  .img-wrapper {
+    height: auto;
+    width: 63%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+  }
+
+  .person-item-desc {
+    text-align: center;
+    .person-job {
+      font-size: 14px;
+    }
+
+    .person-profile-link {
+      font-size: 14px;
+      border-bottom: 1px solid;
+      color: #333;
+      text-decoration: none;
+      &:hover {
+        color: #00adee;
+        border-color: #00adee;
+      }
+    }
+  }
+}
+
+.pagination {
+  margin-top: 15px;
+
+  & > ul.var-pagination {
+    justify-content: center;
+  }
+}
+
+.filtering {
+  box-sizing: border-box;
+  width: 230px;
+  padding: 10px 10px 10px 15px;
+  background: url(https://time.fortegrp.com/assets/images/leftbar_bg.png);
+  .no-padd {
+    padding: 0 0 10px !important;
+    margin-bottom: 10px;
+  }
+
+  .company-logo {
+    padding: 20px 0 0 0px;
+    margin-bottom: 40px;
+  }
+
+  .filter-area-headding {
+    margin: 0 0 65px 0;
+    h1  { 
+      color:#fff;
+      font-size: 13px;
+      margin: 0;
+      padding: 5px;
+      letter-spacing: 1px;
+      background-color: rgba(255,255,255,0.05);
+    }
+  }
+
+  .filters-block {
+    h6 {
+      color:#fff;
+      margin: 0;
+    }
+
+    .filter-field {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin: 0 0 35px 0 !important;
+      }
+
+      .var-input__placeholder, .var-input__input {
+        color: #fff !important;
+        opacity: 0.6;
+        font-size: 13px;
+      }
+
+      .var-input__line {
+        background: #fff !important;
+      }  
+    }
+  }
+
+  .filter-action-block {
+    button.clear-filter-btn {
+      margin-top: 30px;
+      background-color: #09263e;
+      color: #fff;
+      text-transform: uppercase;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+<div class="app-wrapper">
+<div class="filtering">
+
+    <div class="company-logo">
+    <img src="https://time.fortegrp.com/assets/images/logo-white.png" alt="LOGO">
+    </div>
+
+    <div class="filter-area-headding">
+    <h1>Use filter bellow to find more about your college</h1>
+    </div>
+
+    <div class="filters-block">
+    <h6>Filter By:</h6>
+    <var-input class="filter-field" placeholder="Name" v-model="nameFilter" />
+    <var-input class="filter-field" placeholder="Possition" v-model="jobFilter" />
+    <div class="filter-action-block">
+        <var-button class="clear-filter-btn" @click="clearHandler">Clear</var-button>
+    </div>
+    </div>
+
+
+
+
+</div>
+
+<div class="container">
+
+    <div v-if="peopleToShow.length" class="wrapper">
+    <div class="list-headding">
+        <h3> Great People Network</h3>
+        <div class="pagination">
+            <var-pagination 
+            @change="newpage($event)" 
+            :size="pageSize" 
+            :current="currentPage" 
+            :total="paginationCount" 
+            :simple="false" 
+            :show-size-changer="false"/>
+        </div>
+    </div>
+    <div class="list-of-people" ref="list">
+        <div
+        v-for="(person, idx) in peopleToShow"
+        :key="idx" 
+        class="person-item var-elevation--6">
+
+        <div class="img-wrapper">
+            <img :src="`/img/AnyConv.com__photo-${person.id}.jpg`" alt="avatar">
+        </div>
+
+        <div class="person-item-desc">
+            <h3>{{person.fullName}}</h3>
+            <div class="person-job">{{person.job}}</div>
+            <router-link class="person-profile-link" :to="`/person/${person.id}`"> В профиль </router-link>
+        </div>
+        </div>
+    </div>
+
+    <!-- <div class="pagination">
+        <var-pagination 
+        @change="newpage($event)" 
+        :size="pageSize" 
+        :current="currentPage" 
+        :total="paginationCount" 
+        :simple="false" 
+        :show-size-changer="false"/>
+    </div> -->
+    </div>
+    <div class="error-message" v-else>
+    <h1>
+        There is no match
+    </h1>
+    </div>
+</div>
+</div>

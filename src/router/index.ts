@@ -5,7 +5,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Main',
-    component: () => import('../views/Main.vue')
+    component: () => import('../views/Main/Main.vue')
   },
   {
     path: '/person/:id',
